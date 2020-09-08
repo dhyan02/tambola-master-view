@@ -30,11 +30,6 @@ function generateTable(){
         for(var j = 0; j < 10; j++){
             var td = tr.insertCell();
             td.appendChild(document.createTextNode(num));
-            // td.style.border = '1px solid black';
-            // td.style.padding = '20px';
-            // if(i == 1 && j == 1){
-            //     td.setAttribute('rowSpan', '2');
-            // }
             num++;
         }
     }
@@ -57,7 +52,6 @@ function updateTable(currentNum) {
         rowNumber = getRowNumber(currentNum);
         colNumber = getColNumber(currentNum);
         var dummy = document.getElementById('table1').rows[parseInt(rowNumber)].cells;
-        // dummy[parseInt(colNumber, 10)].innerHTML = 00;
         dummy[parseInt(colNumber)].style["background-color"] = "#85C1E9";
         dummy[parseInt(colNumber)].style["color"] = "blue";
         dummy[parseInt(colNumber)].style["font-weight"] = "bold";
@@ -150,18 +144,29 @@ function getColNumber(currentNum) {
         }
     });
 // })(jQuery);
-// window.location.reload();
-// // window.onbeforeunload = function() {
-//     // return "Data will be lost if you leave the page, are you sure?";
-//     document.getElementById( 
-//         'popup-btn').addEventListener('click', (e)=>{ 
-//                     document.getElementById( 
-//         'wrapper').style.visibility = "visible"; 
-//                 })
-// //   };
 
-document.getElementById( 
-    'close-btn').addEventListener('click', (e) => { 
-        document.getElementById('wrapper').style.visibility = "hidden"; 
-        window.location.reload();
+// window.location.reload();
+window.onbeforeunload = function() {
+    return "Data will be lost if you leave the page, are you sure?";
+}
+
+document.getElementById('reload-board').addEventListener('click', function() {
+    releaseTable();
 });
+
+document.getElementById('refresh-page').addEventListener('click', function() {
+    window.location.reload();
+});
+
+function releaseTable(){
+    for(var rowNumber = 0; rowNumber < 9; rowNumber++){
+        for(var colNumber = 0; colNumber < 10; colNumber++){
+            var dummy = document.getElementById('table1').rows[parseInt(rowNumber)].cells;
+            dummy[parseInt(colNumber)].style["color"] = "black";
+            dummy[parseInt(colNumber)].style["background-color"] = "#EEE";
+        }
+    }
+    $('#number-box').text(00);
+    $('#previous-num-box').text(00);
+    usedNumList.length = 0;
+};

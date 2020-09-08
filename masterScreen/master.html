@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <title>dhyan..</title>
+    <title>d-tambola</title>
 </head>
 <body>
     
@@ -14,35 +14,6 @@
             <h2>Housie master view</h2>
         </nav>
     </div>
-
-    <div id="wrapper"> 
-        <div id="popup"> 
-            <div> 
-                <h2>POPUP</h2> 
-                <button class="btn" id = "close-btn"> 
-                    Close 
-                </button> 
-            </div> 
-        </div> 
-    </div>
-
-    <!-- <div class="container">
-        <div id="grid-container"></div>
-        <div id="number-container">
-            <p>Current number is</p>
-            <br>
-            <div id="number-box">&nbsp;&nbsp;&nbsp;</div>
-            <br>
-            <input type="button" value="Get number" id="number-generate">            
-        </div>
-        <div id="number-container2">
-            <p>Current number is</p>
-            <br>
-            <div id="number-box2">&nbsp;&nbsp;&nbsp;</div>
-            <br>
-            <input type="button" value="Get number" id="number-generate">            
-        </div>
-    </div> -->
 
     <div class="container">
         <div class="row">
@@ -54,12 +25,16 @@
                     <p>Current number is</p>
                     <div class="numbox" id="number-box">00</div>
                     <br>
-                    <input type="button" value="Get number" id="number-generate">
+                    <input type="button" value="Get number" id="number-generate" class="button-box">
                 </div>
                 <div id="previous-num-container">
                     <p>Previous number is</p>
                     <div class="numbox" id="previous-num-box">00</div>
-                </div>       
+                </div>
+                <div id="refresh-reload-container">
+                    <input type="button" value="Reload board" id="reload-board" class="button-box">
+                    <input type="button" value="Refresh page" id="refresh-page" class="button-box">
+                </div>   
             </div>
         </div>
     </div>
